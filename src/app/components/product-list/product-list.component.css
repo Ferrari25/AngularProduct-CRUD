@@ -1,0 +1,15 @@
+.btn-quest{
+    background-color: rgb(103, 161, 209);
+}
+
+.btn-modify{
+    background-color: orange;
+}
+
+.btn-delete{
+    background-color: red;
+}
+
+.btn{
+    justify-content: space-around;
+}

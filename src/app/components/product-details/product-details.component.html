@@ -1,0 +1,38 @@
+<div>
+    @if(currentElement.id)
+    {
+    <div>
+      <h4>Desarrollo de SW - Post</h4>
+      <div>
+        <label><strong>Titulo: </strong></label> {{ currentElement.title }} 
+      </div>
+      <div>
+        <label><strong>Descripcion: </strong></label>{{currentElement.price}} 
+      </div>   
+      <div>
+        <label><strong>Views: </strong><i class="fa fa-eye-slash" aria-hidden="true"></i></label> {{ currentElement.price }} 
+      </div>        
+      <div>
+        <label><strong>Likes: </strong><i class="fa-solid fa-thumbs-up" style="color:green;"></i></label> {{ currentElement.price}} 
+      </div>    
+      <div>
+        <label><strong>Dislikes: </strong><i class="fa-solid fa-thumbs-down" style="color: #cf2507;"></i></label> {{ currentElement.price}} 
+      </div>        
+     <!-- <a
+        class="badge badge-warning"
+        routerLink="/post/{{ currentElement.id }}"
+      >
+        Edit
+      </a>-->
+      <p>
+      <!-- <button class="btn btn-primary" routerLink="/product/{{ currentElement.id }}">Modificar</button> -->
+      <button class="btn btn-primary" (click)="OnDelete()">Eliminar</button>
+      </p>
+    </div>  
+    } @else {c
+    <div>
+      <br />
+      <p>Elegir un Producto...</p>
+    </div>
+    }
+</div>

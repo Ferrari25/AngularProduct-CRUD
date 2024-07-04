@@ -1,0 +1,167 @@
+<!-- <div class="register-form">
+    <h2>Nuevo Producto</h2>
+    <form #f="ngForm" (ngSubmit)="f.form.valid && OnSave()" >
+        <div class="form-group">
+            <label for="titulo">Nuevo Producto </label>
+            <input type="text" id="title" name="title" placeholder="Nuevo producto*"
+                class="form-control" minlength="4" maxlength="25" required
+                [(ngModel)]="NewProduct.title" #title="ngModel" 
+                [ngClass]="{ 'is-invalid': f.submitted && title.errors }"/>
+                @if (f.submitted && title.errors ){
+                    <div class="invalid-feedback">
+                      @if (title.errors['required']) {
+                      <div>Titulo es obligatorio</div>
+                      }
+                      @if (title.errors['minlength']) {
+                      <div>El titulo debe ser como minimo de 4 char.</div>
+                      }
+                      @if (title.errors['maxlength']) {
+                      <div>El titulo debe ser como maximo de 20 char.</div>
+                      }
+                    </div>
+                }            
+        </div>
+        <div class="form-group">
+        <label for="description">Descripcion </label>        
+        <input type="text" id="description" name="description" placeholder="Descripcion*"
+            class="form-control" maxlength="300" minlength="10" required
+            [(ngModel)]="NewProduct.description" #description="ngModel" 
+            [ngClass]="{ 'is-invalid': f.submitted && description.errors }"/>
+            @if (f.submitted && description.errors ){
+                <div class="invalid-feedback">
+                  @if (description.errors['required']) {
+                  <div>Descripcion es obligatoria</div>
+                  }
+                </div>
+            }
+        </div>
+        <div class="form-group">
+            <label for="Categoria">Categoria</label>
+            <input type="text" id="category" name="category" placeholder="Categoria*" width="200" minlength="4" maxlength="30" required/>
+        </div>
+        
+        <div class="form-group">
+            <label for="price">Precio </label>
+            <input type="number" id="price" name="price" placeholder="124"
+                class="form-control" [max]="99" min="1" required
+                [(ngModel)]="NewProduct.price" #price="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && price.errors }"/>   
+                @if (f.submitted && price.errors ){
+                    <div class="invalid-feedback">
+                      @if (price.errors['min']) {
+                        <div>El valor minimo es 1</div>
+                      }
+                      @if (price.errors['max']) {
+                        <div>El valor maximo es 99</div>
+                      }
+                    </div>
+                }        
+        </div> 
+
+        <div class="form-group">
+            <label for="discountPercentage">Descuento [%]</label>
+            <input type="number" id="discountPercentage" name="discountPercentage" placeholder="15%"
+                class="form-control" [max]="99" min="1" required
+                [(ngModel)]="NewProduct.price" #discountPercentage="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && discountPercentage.errors }"/>   
+                @if (f.submitted && discountPercentage.errors ){
+                    <div class="invalid-feedback">
+                      @if (discountPercentage.errors['min']) {
+                        <div>El valor minimo es 1</div>
+                      }
+                      @if (discountPercentage.errors['max']) {
+                        <div>El valor maximo es 99</div>
+                      }
+                    </div>
+                }        
+        </div> 
+
+        <div class="form-group">
+            <label for="weight">Peso [g]</label>
+            <input type="number" id="weight" name="weight" placeholder="235"
+                class="form-control" [max]="99" min="1" required
+                [(ngModel)]="NewProduct.weight" #weight="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && weight.errors }"/>   
+                @if (f.submitted && weight.errors ){
+                    <div class="invalid-feedback">
+                      @if (weight.errors['min']) {
+                        <div>El valor minimo es 1</div>
+                      }
+                      @if (weight.errors['max']) {
+                        <div>El valor maximo es 99</div>
+                      }
+                    </div>
+                }        
+        </div>  -->
+
+        <!-- <div class="form-group">
+            <label for="dimensionY">Alto [cm]</label>
+            <input type="number" id="dimensionY" name="dimensionY" placeholder="25"
+                class="form-control" [max]="99" min="1" required
+                [(ngModel)]="NewProduct.dimensions.alto" #dimensionY="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && dimensionY.errors }"/>   
+                @if (f.submitted && dimensionY.errors ){
+                    <div class="invalid-feedback">
+                      @if (dimensionY.errors['min']) {
+                        <div>El valor minimo es 1</div>
+                      }
+                      @if (dimensionY.errors['max']) {
+                        <div>El valor maximo es 99</div>
+                      }
+                    </div>
+                }        
+        </div> 
+
+        <div class="form-group">
+            <label for="dimensionX">Ancho [cm]</label>
+            <input type="number" id="dimensionX" name="dimensionX" placeholder="30"
+                class="form-control" [max]="99" min="1" required
+                [(ngModel)]="NewProduct.dimensionX" #dimensionX="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && dimensionX.errors }"/>   
+                @if (f.submitted && dimensionX.errors ){
+                    <div class="invalid-feedback">
+                      @if (dimensionX.errors['min']) {
+                        <div>El valor minimo es 1</div>
+                      }
+                      @if (dimensionX.errors['max']) {
+                        <div>El valor maximo es 99</div>
+                      }
+                    </div>
+                }        
+        </div> 
+
+        <div class="form-group">
+            <label for="dimensionZ">Largo [cm]</label>
+            <input type="number" id="dimensionZ" name="dimensionZ" placeholder="12"
+                class="form-control" [max]="99" min="1" required
+                [(ngModel)]="NewProduct.Dime" #dimensionZ="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && dimensionZ.errors }"/>   
+                @if (f.submitted && dimensionZ.errors ){
+                    <div class="invalid-feedback">
+                      @if (dimensionZ.errors['min']) {
+                        <div>El valor minimo es 1</div>
+                      }
+                      @if (dimensionZ.errors['max']) {
+                        <div>El valor maximo es 99</div>
+                      }
+                    </div>
+                }        
+        </div> -->
+        
+        <!-- <div class="form-group">
+            <label for="cursoPrivado" class="form-check-label">Privado</label>&nbsp;
+            <input type="checkbox" id="cursoPrivado" name="cursoPrivado"
+                class="form-check-input"  [(ngModel)]="NewProduct.id" #cursoPrivado="ngModel" />       
+        </div> -->
+
+        <!-- <br/>   
+        <div class="form-group">
+        <button type="submit"  class="btn btn-primary">Enviar</button>
+        <button type="reset" class="btn btn-warning float-right">Cancelar</button> -->
+        <!-- <button (click)="showSuccess()">Success(productfom)</button>
+        <button (click)="showError()">Error(productfom)</button>
+        <button (click)="showInfo()">Info(productfom)</button>
+        <button (click)="showWarning()">Warning(productfom)</button>      
+                </div>
+    </form>
+    </div> -->
