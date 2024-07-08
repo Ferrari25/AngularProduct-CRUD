@@ -4,15 +4,16 @@ import { ProductService } from '../../services/product.service';
 import { Products } from '../../models/products.model';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
 import { ToastrService } from 'ngx-toastr';
-
+import { NgModule } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductListComponent,CommonModule,ProductDetailsComponent],
+  imports: [ProductListComponent,CommonModule,ProductDetailsComponent,ProductCardComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -20,13 +21,14 @@ export class ProductListComponent implements OnInit {
 
   //Una propiedad opcional que almacena un arreglo de publicaciones.
   products?:Products[];
-
+  selectedProduct?: Products;
   //propiedad que almacena la publicación actualmente seleccionada.
   currentElement: Products = new Products();
 
   // El constructor inyecta una instancia del ProductService para usarla en el componente.
   constructor(private productService: ProductService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+  ) { }
     
 
   //Método del ciclo de vida del componente que se ejecuta al inicializarse. Aquí se llama al método retrieveProduct() para obtener las publicaciones.
@@ -116,6 +118,10 @@ retrieveFiltered(search: any): void {
       }
     });
    }
+   
+   selectProduct(product: Products): void {
+    this.selectedProduct = product;
+  }
 
    alertModifyProduct(){
     Swal.fire({

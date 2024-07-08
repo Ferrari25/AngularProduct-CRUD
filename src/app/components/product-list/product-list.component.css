@@ -1,15 +1,71 @@
 .btn-quest{
-    background-color: rgb(103, 161, 209);
+background-color: rgb(103, 161, 209);
 }
 
 .btn-modify{
-    background-color: orange;
+background-color: orange;
 }
 
 .btn-delete{
-    background-color: red;
+background-color: red;
 }
 
-.btn{
-    justify-content: space-around;
+.btn-group .btn {
+margin-right: 10px;
 }
+
+.btn-group .btn:last-child {
+margin-right: 0;
+}
+
+.btn {
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilos para el hover de cada tipo de botón */
+.btn-quest:hover {
+background-color: #0056b3; /* Cambia esto al color deseado */
+transform: scale(1.05);
+}
+
+.btn-modify:hover {
+background-color: #28a745; /* Cambia esto al color deseado */
+transform: scale(1.05);
+}
+
+.btn-delete:hover {
+background-color: #dc3545; /* Cambia esto al color deseado */
+transform: scale(1.05);
+}
+
+.table tbody tr {
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para el hover en las filas */
+.table tbody tr:hover {
+background-color: #f1f1f1; /* Cambia esto al color de fondo deseado */
+transform: scale(1.02);
+}
+
+/* Estilo base para las filas de la tabla */
+.table tbody tr {
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para el hover en las filas */
+.table tbody tr:hover {
+background-color: #e9ecef; /* Un fondo gris claro */
+}
+
+/* Efecto hover para las filas de la tabla */
+.table tbody tr:hover {
+    background-color: #a2a2a2; /* Color gris claro */
+  }
+  
+  /* Estilos para la tarjeta de información del producto */
+  .sticky-card {
+    position: -webkit-sticky; /* Para Safari */
+    position: sticky;
+    top: 20px; /* Ajusta la distancia desde la parte superior de la página */
+  }

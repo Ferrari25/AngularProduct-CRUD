@@ -1,34 +1,47 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Categoría</th>
-      <th scope="col">Precio </th>
-      <th scope="col">Stock</th>
-      <th scope="col">Valoracion</th>
-      <th scope="col">Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (product of products; track product.id) { 
-    <tr>
-      <th scope="row">{{product.id}}</th>
-      <td>{{product.title}}</td>
-      <td>{{product.category}}</td>
-      <td>{{product.price}}</td>
-      <td>{{product.stock}}</td>
-      <td>{{product.rating}}</td>
-      
-      
-      <!-- <td>{{product.status}}</td> -->
-      <td>
-        <button type="button" class="btn btn-quest" (click)="alertModifyProduct()">consultar</button>
-        <button type="button" class="btn btn-modify" (click)="alertModifyProduct()">Editar</button> 
-        <button class="btn btn-delete" (click)="alertOnDelete()">Eliminar</button>
-        
-      </td>
-    </tr>
-    }
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <!-- Columna para la tabla de productos -->
+    <div class="col-md-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Precio </th>
+            <th scope="col">Stock</th>
+            <th scope="col">Valoracion</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (product of products; track product.id){
+          <tr>
+            <th scope="row">{{ product.id }}</th>
+            <td>{{ product.title }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.stock }}</td>
+            <td>{{ product.rating }}</td>
+            <td>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-quest me-2" (click)="selectProduct(product)">Consultar</button>
+                <button type="button" class="btn btn-modify me-2" (click)="alertModifyProduct()">Editar</button>
+                <button type="button" class="btn btn-delete" (click)="alertOnDelete()">Eliminar</button>
+                <button class="btn btn-primary" (click)="selectProduct(product)">Consultar</button>
+              </div>
+            </td>
+          </tr>}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- import de la card de los productos -->
+    <div class="row">
+      <div *ngFor="let product of products" class="col-md-4">
+        <app-product-card [currentElement]="product"></app-product-card>
+      </div>
+    </div>
+
+  </div>
+</div>

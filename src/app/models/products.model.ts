@@ -4,28 +4,28 @@
 //         this.title='';
 //         this.price=0;
 //     }
-//     id!:Number;
-//     title: string = '';
-//     description: string = '';
-//     category: string = '';
-//     price: number = 0;
-//     discountPercentage: number = 0;
-//     rating: number = 0;
-//     stock: number = 0;
-//     tags: string[] = [''];
-//     brand: string = '';
-//     sku: string = '';
-//     weight: number = 0;
-//     dimensions?: Dimension = new Dimension();
-//     warrantyInformation: string = '';
-//     shippingInformation: string = '';
-//     availabilityStatus: string = '';
-//     reviews?: Review[] = [];
-//     returnPolicy: string = '';
-//     minimumOrderQuantity: number = 0;
-//     meta?: Meta = new Meta();
-//     images: string = '';
-//     thumbnail: string = '';
+// id!:Number;
+// title: string;
+// description: string; 
+// category: string; 
+// price: number; 
+// discountPercentage: number;
+// rating: number;
+// stock: number;
+// tags: [string]; 
+// brand: string;
+// sku: string; 
+// weight: number; 
+// dimensions?: Dimension = new Dimension();
+// warrantyInformation: string; 
+// shippingInformation: string;
+// availabilityStatus: string;
+// reviews?: [Review]
+// returnPolicy: string; 
+// minimumOrderQuantity: number; 
+// meta?: Meta = new Meta();
+// images: string;
+// thumbnail: string; 
     
 // }
 
@@ -67,16 +67,42 @@ export class Products {
         this.category= [''];
         this.rating=0;
         this.tags=[''];
+        this.images=''
+        this.discountPercentage=0;
+        this.brand='';
+        this.sku='';
+        this.weight=0;
+        this.warrantyInformation=''; 
+        this.shippingInformation='';
+        this.availabilityStatus='';
+        this.returnPolicy='';
+        this.minimumOrderQuantity=0; 
+        this.thumbnail=''; 
+
     }
 
-    id! : Number;
-    title: string;
-    description:string;
-    price: Number;
-    stock:Number;
-    category:[String];
-    rating:Number;
-    tags:[String];
+    id!:Number;
+title: string;
+description: string; 
+category: [string]; 
+price: number; 
+discountPercentage: number;
+rating: number;
+stock: number;
+tags: [string]; 
+brand: string;
+sku: string; 
+weight: number; 
+dimensions?: Dimension = new Dimension();
+warrantyInformation: string; 
+shippingInformation: string;
+availabilityStatus: string;
+reviews?: [Review]
+returnPolicy: string; 
+minimumOrderQuantity: number; 
+//meta?: Meta = new Meta();
+images: string;
+thumbnail: string; 
  
 }
 

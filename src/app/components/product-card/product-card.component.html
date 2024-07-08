@@ -1,0 +1,38 @@
+<!-- columna para la tarjeta de información del producto  -->
+    <div class="col-md-4">
+      <div *ngif="selectedproduct" class="card mt-3">
+        <div class="card-header">
+          información del producto
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <p></p>
+              <h5 class="card-title">{{ currentElement.title }}</h5>
+              <p class="card-text"><strong>categoría:</strong> {{ currentElement.category }}</p>
+              <p class="card-text"><strong>precio:</strong> {{ currentElement.price }}</p>
+              <p class="card-text"><strong>stock:</strong> {{ currentElement.stock }}</p>
+              <p class="card-text"><strong>valoración:</strong> {{ currentElement.rating }}</p>
+              
+              <p class="card-text"><strong>tags:</strong> {{ currentElement.tags }}</p>
+              <!-- <p class="card-text"><strong>discountpercentage:</strong> {{ currentElement.discountpercentage }}</p> -->
+              <p class="card-text"><strong>brand:</strong> {{ currentElement.brand }}</p>
+
+              <p class="card-text"><strong>sku:</strong> {{ currentElement.sku }}</p>
+              <p class="card-text"><strong>weight:</strong> {{ currentElement.weight }}</p>
+              <!-- <p class="card-text"><strong>warrantyinformation:</strong> {{ currentElement.warrantyinformation }}</p>
+              <p class="card-text"><strong>shippinginformation:</strong> {{ currentElement.shippinginformation }}</p>
+
+              <p class="card-text"><strong>availabilitystatus:</strong> {{ currentElement.availabilitystatus }}</p>
+              <p class="card-text"><strong>returnpolicy:</strong> {{ currentElement.returnpolicy }}</p>
+              <p class="card-text"><strong>minimumorderquantity:</strong> {{ currentElement.minimumorderquantity }}</p>
+
+              <button class="btn btn-primary" (click)="alertModifyProduct()">editar</button>
+            </div>
+            <div class="col-md-6">
+              <img [src]="selectedProduct.images" class="img-fluid" alt="{{ selectedProduct.title }}">
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
