@@ -1,80 +1,94 @@
-.btn-quest{
-background-color: rgb(103, 161, 209);
+body {
+  font-size: 18px; /* Aumentar el tamaño de la fuente */
+  margin: auto; /* Quitar los márgenes por defecto */
+  padding: auto; /* Quitar el padding por defecto */
 }
 
-.btn-modify{
-background-color: orange;
+.container {
+  padding-left: 15px; /* Reducir el padding lateral */
+  padding-right: 15px; /* Reducir el padding lateral */
 }
 
-.btn-delete{
-background-color: red;
+.btn-quest {
+  background-color: rgb(103, 161, 209);
+}
+
+.btn-modify {
+  background-color: orange;
+}
+
+.btn-delete {
+  background-color: red;
 }
 
 .btn-group .btn {
-margin-right: 10px;
+  margin-right: 10px;
 }
 
 .btn-group .btn:last-child {
-margin-right: 0;
+  margin-right: 0;
 }
 
 .btn {
-transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Estilos para el hover de cada tipo de botón */
 .btn-quest:hover {
-background-color: #0056b3; /* Cambia esto al color deseado */
-transform: scale(1.05);
+  background-color: #0056b3; /* Cambia esto al color deseado */
+  transform: scale(1.05);
 }
 
 .btn-modify:hover {
-background-color: #28a745; /* Cambia esto al color deseado */
-transform: scale(1.05);
+  background-color: #28a745; /* Cambia esto al color deseado */
+  transform: scale(1.05);
 }
 
 .btn-delete:hover {
-background-color: #dc3545; /* Cambia esto al color deseado */
-transform: scale(1.05);
-}
-
-.table tbody tr {
-transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Estilo para el hover en las filas */
-.table tbody tr:hover {
-background-color: #f1f1f1; /* Cambia esto al color de fondo deseado */
-transform: scale(1.02);
+  background-color: #dc3545; /* Cambia esto al color deseado */
+  transform: scale(1.05);
 }
 
 /* Estilo base para las filas de la tabla */
 .table tbody tr {
-transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Estilo para el hover en las filas */
 .table tbody tr:hover {
-background-color: #e9ecef; /* Un fondo gris claro */
+  background-color: #a2a2a2; /* Un fondo gris claro */
 }
 
-/* Efecto hover para las filas de la tabla */
-.table tbody tr:hover {
-    background-color: #a2a2a2; /* Color gris claro */
-  }
-  
-  /* Estilos para la tarjeta de información del producto */
-  .sticky-card {
-    /*position: -webkit-sticky; /* Para Safari */
-    /*position: sticky;
-    /*top: 20px; /* Ajusta la distancia desde la parte superior de la página */
-    position: sticky;
-    top: 0;
-  }
+/* Estilos para la tarjeta de información del producto */
+.sticky-card {
+  position: sticky;
+  top: 0;
+}
 
-  
-  .lista-productos {
-    overflow-y: auto;
-    max-height: 100vh;
-  }
-  
+.lista-productos {
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.table {
+  margin-bottom: 0; /* Eliminar margen inferior de la tabla */
+}
+
+.table th, .table td {
+  padding: 10px; /* Ajustar el relleno de las celdas de la tabla */
+  white-space: nowrap; /* Prevenir que el texto se desborde */
+}
+
+.table td:nth-child(2) { /* Segunda columna (Nombre) */
+  max-width: 150px; /* Ajustar el ancho máximo */
+  overflow: hidden; /* Ocultar texto desbordado */
+  text-overflow: ellipsis; /* Añadir puntos suspensivos al texto desbordado */
+}
+
+.card {
+  margin-bottom: 0; /* Eliminar margen inferior de la tarjeta */
+}
+
+.card-header, .card-body {
+  padding: 10px; /* Ajustar el relleno de la tarjeta */
+}
