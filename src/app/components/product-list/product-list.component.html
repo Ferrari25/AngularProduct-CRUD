@@ -21,12 +21,12 @@
             <th scope="row">{{ product.id }}</th>
             <td>{{ product.title }}</td>
             <td>{{ product.category }}</td>
-            <td>{{ product.price }}</td>
+            <td>${{ product.price }}</td>
             <td>{{ product.stock }}</td>
             <td>{{ product.rating }}</td>
             <td>
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-quest me-2" (click)="selectProduct(product)">Consultar</button>
+                <button type="button" class="btn btn-quest me-2" (click)="selectProduct(product)">Info</button>
                 <button type="button" class="btn btn-modify me-2" (click)="alertModifyProduct()">Editar</button>
                 <button type="button" class="btn btn-delete" (click)="alertOnDelete()">Eliminar</button>
               </div>

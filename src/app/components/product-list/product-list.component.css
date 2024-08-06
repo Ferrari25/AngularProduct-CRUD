@@ -14,7 +14,7 @@ body {
 }
 
 .btn-modify {
-  background-color: orange;
+  background-color: rgb(253, 195, 87);
 }
 
 .btn-delete {
@@ -40,7 +40,7 @@ body {
 }
 
 .btn-modify:hover {
-  background-color: #28a745; /* Cambia esto al color deseado */
+  background-color: #ff8800; /* Cambia esto al color deseado */
   transform: scale(1.05);
 }
 
