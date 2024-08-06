@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <!-- Columna para la tabla de productos -->
@@ -8,15 +9,15 @@
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
             <th scope="col">Categoría</th>
-            <th scope="col">Precio </th>
+            <th scope="col">Precio</th>
             <th scope="col">Stock</th>
-            <th scope="col">Valoracion</th>
+            <th scope="col">Valoración</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
           @for (product of products; track product.id){
-          <tr>
+          <tr >
             <th scope="row">{{ product.id }}</th>
             <td>{{ product.title }}</td>
             <td>{{ product.category }}</td>
@@ -28,7 +29,6 @@
                 <button type="button" class="btn btn-quest me-2" (click)="selectProduct(product)">Consultar</button>
                 <button type="button" class="btn btn-modify me-2" (click)="alertModifyProduct()">Editar</button>
                 <button type="button" class="btn btn-delete" (click)="alertOnDelete()">Eliminar</button>
-                <button class="btn btn-primary" (click)="selectProduct(product)">Consultar</button>
               </div>
             </td>
           </tr>}
@@ -36,12 +36,39 @@
       </table>
     </div>
 
-    <!-- import de la card de los productos -->
+    <!-- Columna para la tarjeta de información del producto -->
+    <div class="col-md-4" *ngIf="selectedProduct">
+      <div class="card mt-3">
+        <div class="card-header">
+          Información del producto
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="card-title">{{ selectedProduct.title }}</h5>
+              <p class="card-text"><strong>Categoría:</strong> {{ selectedProduct.category }}</p>
+              <p class="card-text"><strong>Precio:</strong> {{ selectedProduct.price }}</p>
+              <p class="card-text"><strong>Stock:</strong> {{ selectedProduct.stock }}</p>
+              <p class="card-text"><strong>Valoración:</strong> {{ selectedProduct.rating }}</p>
+              <p class="card-text"><strong>Tags:</strong> {{ selectedProduct.tags }}</p>
+              <p class="card-text"><strong>Marca:</strong> {{ selectedProduct.brand }}</p>
+              <p class="card-text"><strong>SKU:</strong> {{ selectedProduct.sku }}</p>
+              <p class="card-text"><strong>Peso:</strong> {{ selectedProduct.weight }}</p>
+              <button class="btn btn-primary" (click)="alertModifyProduct()">Editar</button>
+            </div>
+            <div class="col-md-6">
+              <img [src]="selectedProduct.images" class="img-fluid" alt="{{ selectedProduct.title }}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards de productos adicionales -->
     <div class="row">
       <div *ngFor="let product of products" class="col-md-4">
         <app-product-card [currentElement]="product"></app-product-card>
       </div>
     </div>
-
   </div>
 </div>
