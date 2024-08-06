@@ -65,7 +65,16 @@ background-color: #e9ecef; /* Un fondo gris claro */
   
   /* Estilos para la tarjeta de información del producto */
   .sticky-card {
-    position: -webkit-sticky; /* Para Safari */
+    /*position: -webkit-sticky; /* Para Safari */
+    /*position: sticky;
+    /*top: 20px; /* Ajusta la distancia desde la parte superior de la página */
     position: sticky;
-    top: 20px; /* Ajusta la distancia desde la parte superior de la página */
+    top: 0;
   }
+
+  
+  .lista-productos {
+    overflow-y: auto;
+    max-height: 100vh;
+  }
+  
